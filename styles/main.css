@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 1rem 0 1rem;
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+main div {
+  width: 20rem;
+  height: 25rem;
+}
+main div img {
+  width: 15rem;
+  height: 16rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
