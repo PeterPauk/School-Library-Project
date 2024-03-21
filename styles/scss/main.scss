@@ -11,18 +11,37 @@ h1{
     margin: 1rem 0 1rem;
 }
 main{
-    width: 90%;
+    width: 80rem;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
-    div{
-        width: 20rem;
-        height: 25rem;
+    .book{
+        width: 25rem;
+        height: 15rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        h3{
+            padding: 0.5rem 0.5rem 0 0;
+            margin-bottom: 0.5rem;
+        }
+        h4{
+            margin: 0 0 1rem;
+            color: rgb(50, 50, 176);
+        }
+        p{
+            font-size: 1rem;
+
+        }
         img{
-            width: 15rem;
-            height: 16rem;
-            object-fit: contain;
+            width: 9rem;
+            height: 12rem;
+            margin: 0 1rem 0 0.5rem;
+            -webkit-box-shadow: 22px 19px 25px -8px rgba(209,209,209,0.39);
+            -moz-box-shadow: 22px 19px 25px -8px rgba(209,209,209,0.39);
+            box-shadow: 22px 19px 25px -8px rgba(209,209,209,0.39);
         }
     }
 }
