@@ -71,11 +71,12 @@ include_once './inc/config.php'
             <div class="book">
                 <img src="{$row['obrazok']}" alt="Image" />
                 <div class="book-content">
-                    <h3>{$row['nazov']}</h3>
-                    <h4>{$row['autor']}</h4>
+                    <h3 class="book-title">{$row['nazov']}</h3>
+                    <h4 class="book-author">{$row['autor']}</h4>
                     <p class="book-desc">{$row['informacieoknihe']}</p>
-                    <h5>{$row['cena']}</h5>
+                    <h5>{$row['cena']}€</h5>
                 </div>
+                <hr>
             </div>
         HTML;
         }

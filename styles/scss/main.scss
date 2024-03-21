@@ -1,3 +1,5 @@
+@import "./variables";
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,8 +9,10 @@
 h1{
     text-align: center;
     font-size: 2rem;
-    padding: 1rem;
-    margin: 1rem 0 1rem;
+    padding: 2rem;
+    margin: 0 0 2rem;
+    color: white;
+    background-color: black;
 }
 main{
     width: 80rem;
@@ -26,10 +30,16 @@ main{
         h3{
             padding: 0.5rem 0.5rem 0 0;
             margin-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
         h4{
             margin: 0 0 1rem;
-            color: rgb(50, 50, 176);
+            color: $blue;
+        }
+        h5{
+            margin: 1rem 0 0;
+            font-size: 1.4rem;
+            color: $blue;
         }
         p{
             font-size: 1rem;
@@ -38,10 +48,13 @@ main{
         img{
             width: 9rem;
             height: 12rem;
-            margin: 0 1rem 0 0.5rem;
-            -webkit-box-shadow: 22px 19px 25px -8px rgba(209,209,209,0.39);
-            -moz-box-shadow: 22px 19px 25px -8px rgba(209,209,209,0.39);
-            box-shadow: 22px 19px 25px -8px rgba(209,209,209,0.39);
+            margin: 0 1.5rem 0 0.5rem;
+            -webkit-box-shadow: 22px 19px 25px -8px rgba(209,209,209,0.63);
+            -moz-box-shadow: 22px 19px 25px -8px rgba(209,209,209,0.63);
+            box-shadow: 22px 19px 25px -8px rgba(209,209,209,0.63)
         }
     }
+}
+hr{
+    position: absolute;
 }

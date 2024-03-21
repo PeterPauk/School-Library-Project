@@ -7,4 +7,6 @@ function truncateText(selector, maxLength) {
         }
     });
 }
-truncateText('.book-desc', 120);
+truncateText('.book-desc', 70);
+truncateText('.book-title', 50);
+truncateText('.book-author', 50);
