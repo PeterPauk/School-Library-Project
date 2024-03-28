@@ -9,17 +9,22 @@
 h1{
     text-align: center;
     font-size: 2rem;
-    padding: 2rem;
-    margin: 0 0 2rem;
+    padding: 3rem 2rem;
     color: white;
-    background-color: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(41, 50, 44, 0.8)),  url(../img/books.jpg);
+    background-position: center top;
+    background-size: cover;
 }
 main{
-    width: 80rem;
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 0.5fr 2fr;
+}
+.main-books{
+    width: 55rem;
+    margin: 2rem auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1rem;
     .book{
         width: 25rem;
         height: 15rem;
@@ -27,6 +32,7 @@ main{
         grid-template-columns: 1fr 2fr;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin-bottom: 2rem;
         h3{
             padding: 0.5rem 0.5rem 0 0;
             margin-bottom: 0.5rem;
@@ -55,6 +61,20 @@ main{
         }
     }
 }
+ul{
+    padding: 1rem 0 0 2rem;
+    list-style: none;
+    color: white;
+    background-color: $black;
+    li{
+        font-size: 1.2rem;
+        padding: 1rem;
+
+    }
+}
 hr{
-    position: absolute;
+    color: gray;
+    opacity: 25%;
+    position: relative;
+    right: 1.25rem;
 }

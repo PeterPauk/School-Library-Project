@@ -15,8 +15,23 @@ include_once './inc/config.php'
 
 </head>
 <body>
-    <h1>XLM KNIŽNICA</h1>
+    <h1>XML KNIŽNICA</h1>
+   
     <main>
+    <ul>
+    <li>Stredné školy</li>
+    <hr>
+    <li>Autoškoly</li>
+    <hr>
+    <li>Autoškoly</li>
+    <hr>
+    <li>Autoškoly</li>
+    <hr>
+    <li>Autoškoly</li>
+    <hr>
+    <li>Autoškoly</li>
+    </ul>
+
     <?php
     $xmlSchools = "https://export.martinus.sk/?a=XmlPartner&cat=6758&q=&z=B7GET5&key=NYtvbkOHAzPzGJNz7qR9Kk";
     $xmlCars = "https://export.martinus.sk/?a=XmlPartner&cat=6768&q=&z=B7GET5&key=NYtvbkOHAzPzGJNz7qR9Kk";
@@ -65,6 +80,10 @@ include_once './inc/config.php'
     $itemResults = mysqli_query($conn, $sqlItems);
     $itemsCheck = mysqli_num_rows($itemResults);
 
+    ?>
+    <div class="main-books">
+    <?php
+
     if ($itemsCheck > 0) {
         while ($row = mysqli_fetch_assoc($itemResults)) {
             echo <<<HTML
@@ -76,14 +95,15 @@ include_once './inc/config.php'
                     <p class="book-desc">{$row['informacieoknihe']}</p>
                     <h5>{$row['cena']}€</h5>
                 </div>
-                <hr>
+                
             </div>
+            
         HTML;
         }
     }
-
     $conn->close();
     ?>
+    </div>
     </main>
     <script src="./js/functions.js"></script>
     
