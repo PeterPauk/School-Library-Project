@@ -16,21 +16,8 @@ include_once './inc/config.php'
 </head>
 <body>
     <h1>XML KNIŽNICA</h1>
-   
     <main>
     <ul>
-    <li>Stredné školy</li>
-    <hr>
-    <li>Autoškoly</li>
-    <hr>
-    <li>Autoškoly</li>
-    <hr>
-    <li>Autoškoly</li>
-    <hr>
-    <li>Autoškoly</li>
-    <hr>
-    <li>Autoškoly</li>
-    </ul>
 
     <?php
     $xmlSchools = "https://export.martinus.sk/?a=XmlPartner&cat=6758&q=&z=B7GET5&key=NYtvbkOHAzPzGJNz7qR9Kk";
@@ -39,12 +26,25 @@ include_once './inc/config.php'
     $xmlProgramming = "https://export.martinus.sk/?a=XmlPartner&cat=6408&q=&z=B7GET5&key=NYtvbkOHAzPzGJNz7qR9Kk";
     $xmlWeb = "https://export.martinus.sk/?a=XmlPartner&cat=6406&q=&z=B7GET5&key=NYtvbkOHAzPzGJNz7qR9Kk";
     $xmlDatabases = "https://export.martinus.sk/?a=XmlPartner&cat=6414&q=&z=B7GET5&key=NYtvbkOHAzPzGJNz7qR9Kk";
-    $xmlfiles = [$xmlSchools /*, $xmlCars, $xmlUniversity, $xmlProgramming, $xmlWeb, $xmlDatabases*/];
+    $xmlfiles = [$xmlSchools, $xmlCars, /*$xmlUniversity, $xmlProgramming, $xmlWeb, $xmlDatabases*/];
+
+    $categories = ['Stredné školy', 'Autoškoly', 'Vysoké školy', 'Programovanie', 'Web dizajn', 'Databázy'];
+
+    for($i = 0; $i < count($categories); $i++){
+        echo '
+        <form action="index.php" method="GET">
+        <li><input type="submit" name="submit" value="'.$categories[$i].'"></li>
+        <hr>
+        ';    
+    }
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $bookCategory = -1;
 
     foreach ($xmlfiles as $xmlfile) {
+
+        $bookCategory++;
 
         curl_setopt($ch, CURLOPT_URL, $xmlfile);
     
@@ -66,13 +66,15 @@ include_once './inc/config.php'
                 $checkResult = mysqli_query($conn, $checkSql);
 
                 if (mysqli_num_rows($checkResult) == 0) {
-                    $insertSql = "INSERT INTO test_xml (nazov, autor, informacieoknihe, cena, obrazok) VALUES ('$nazov', '$autor', '$informacieoknihe', '$cena', '$obrazok')";
+                    $insertSql = "INSERT INTO test_xml (nazov, autor, kategoria, informacieoknihe, cena, obrazok) VALUES ('$nazov', '$autor', '$categories[$bookCategory]','$informacieoknihe', '$cena', '$obrazok')";
                     $conn->query($insertSql);
                 }
         }
         
-        $updateSql = "UPDATE test_xml SET kategoria = 'preskoly' WHERE id < 485;";
+        /*
+        $updateSql = "UPDATE test_xml SET kategoria = 'Stredné školy' WHERE id < 485;";
         $updateResult = mysqli_query($conn, $updateSql);
+        */
     }
     curl_close($ch);
 
@@ -81,6 +83,7 @@ include_once './inc/config.php'
     $itemsCheck = mysqli_num_rows($itemResults);
 
     ?>
+    </ul>
     <div class="main-books">
     <?php
 
@@ -95,9 +98,7 @@ include_once './inc/config.php'
                     <p class="book-desc">{$row['informacieoknihe']}</p>
                     <h5>{$row['cena']}€</h5>
                 </div>
-                
             </div>
-            
         HTML;
         }
     }

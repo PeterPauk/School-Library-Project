@@ -69,7 +69,6 @@ ul{
     li{
         font-size: 1.2rem;
         padding: 1rem;
-
     }
 }
 hr{
@@ -78,3 +77,10 @@ hr{
     position: relative;
     right: 1.25rem;
 }
+input[type="submit"] {
+    color: white;
+    background-color: transparent;
+    font-size: 1.2rem;
+    border: 0px solid transparent;
+    cursor: pointer;
+  }
