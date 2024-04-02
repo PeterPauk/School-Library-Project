@@ -5,24 +5,6 @@
   font-family: "Josefin Sans", sans-serif;
 }
 
-form {
-  display: flex;
-  flex-direction: row;
-  transition: 0.4s;
-  color: white;
-}
-form i {
-  position: relative;
-  top: 1rem;
-  margin: 0 0.5rem 0 1.5rem;
-}
-form:hover {
-  background-color: white;
-}
-form:hover input, form:hover i {
-  color: #333;
-}
-
 h1 {
   text-align: center;
   font-size: 2rem;
@@ -35,7 +17,7 @@ h1 {
 
 main {
   display: grid;
-  grid-template-columns: 0.4fr 2fr;
+  grid-template-columns: 0.4fr 2.2fr;
 }
 
 .main-books {
@@ -53,11 +35,6 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 2rem;
-}
-.main-books .book h3 {
-  padding: 0.5rem 0.5rem 0 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
 }
 .main-books .book h4 {
   margin: 0 0 1rem;
@@ -82,6 +59,23 @@ ul {
   list-style: none;
   background-color: #333;
 }
+ul form {
+  display: flex;
+  flex-direction: row;
+  transition: 0.4s;
+  color: white;
+}
+ul form i {
+  position: relative;
+  top: 1rem;
+  margin: 0 0.5rem 0 1.5rem;
+}
+ul form:hover {
+  background-color: white;
+}
+ul form:hover input, ul form:hover i {
+  color: #333 !important;
+}
 ul li {
   font-size: 1.2rem;
   padding: 1rem;
@@ -96,7 +90,7 @@ hr {
   right: 1.25rem;
 }
 
-input[type=submit] {
+form input[type=submit] {
   color: white;
   background-color: transparent;
   font-size: 1.2rem;
@@ -110,4 +104,16 @@ input[type=submit] {
 .active {
   background-color: white;
   color: #333 !important;
+}
+
+.title-button {
+  padding: 0 0.5rem 0 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: transparent;
+  color: black;
+  border: 0px transparent solid;
+  cursor: pointer;
+  text-align: left;
 }
