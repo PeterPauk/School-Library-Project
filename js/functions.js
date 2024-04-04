@@ -8,6 +8,6 @@ function truncateText(selector, maxLength) {
     });
 }
 truncateText('.book-desc', 100);
-truncateText('.book-title', 70);
+truncateText('.book-title', 80);
 truncateText('.book-author', 50);
 

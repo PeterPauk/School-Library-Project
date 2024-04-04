@@ -1,6 +1,7 @@
 <?php
 include_once './inc/config.php';
 include_once './components/head.php';
+$categories = ['Stredné školy', 'Autoškoly', 'Vysoké školy', 'Programovanie', 'Web dizajn', 'Databázy'];
 ?>
 
 <nav>

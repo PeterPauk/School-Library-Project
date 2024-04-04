@@ -13,6 +13,7 @@ h1 {
   background-image: linear-gradient(rgba(41, 50, 44, 0.8), rgba(0, 0, 0, 0.75)), url(../img/books.jpg);
   background-position: center top;
   background-size: cover;
+  border-top: 4px solid white;
 }
 
 main {
@@ -124,7 +125,6 @@ nav {
   background-color: #333;
   color: white;
   padding: 2rem 1rem;
-  border-bottom: 4px solid white;
 }
 nav h4 {
   font-size: 1.5rem;
@@ -146,4 +146,55 @@ nav button {
   border-radius: 6px;
   font-size: 1.1rem;
   margin-left: 1rem;
+}
+
+.book-page {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
+  width: 70rem;
+  margin: 3rem auto;
+}
+.book-page img {
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 1px 2px 23px 4px rgb(176, 176, 176);
+  height: 36rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.book-page div {
+  margin-top: 2rem;
+}
+.book-page div h3 {
+  font-size: 3rem;
+}
+.book-page div h4 {
+  color: rgb(50, 50, 176);
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+.book-page div p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  background-color: rgb(246, 245, 245);
+  border: 2px solid rgb(198, 197, 197);
+  padding: 0.8rem 0.7rem;
+}
+.book-page div h5 {
+  color: rgb(50, 50, 176);
+  margin: 0.5rem 0 0.5rem;
+  font-size: 2rem;
+}
+.book-page div span {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.book-side {
+  background-image: linear-gradient(rgba(41, 50, 44, 0.8), rgba(0, 0, 0, 0.15)), url(../img/books1.jpg);
+  background-position: center top;
+  background-size: cover;
+  width: 15rem;
 }
