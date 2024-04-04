@@ -1,6 +1,6 @@
 <?php
 include_once './inc/config.php';
-include_once './inc/head.php';
+include_once './components/head.php';
 
 if(isset($_POST['product'])){
     $book = $_POST['product'];

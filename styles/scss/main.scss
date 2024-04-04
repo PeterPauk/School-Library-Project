@@ -115,3 +115,33 @@ form input[type="submit"] {
     cursor: pointer;
     text-align: left;
 }
+nav{
+    display: flex;
+    flex-direction: row;
+    background-color: $black;
+    color: white;
+    padding: 2rem 1rem;
+    border-bottom: 4px solid white;
+    h4{
+        font-size: 1.5rem;
+        margin-right: 57rem;
+        position: relative;
+        top: 0.4rem;
+        left: 1rem;
+    }
+    select{
+        width: 14rem;
+        padding: 0.3rem 0.2rem;
+        font-size: 1.1rem;
+    }
+    button{
+        background-color: $blue;
+        color: white;
+        padding: 0.5rem 0.8rem;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        margin-left: 1rem;
+    }
+
+}

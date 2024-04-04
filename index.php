@@ -1,12 +1,15 @@
 <?php
 include_once './inc/config.php';
-include_once './inc/head.php';
+include_once './components/head.php';
+
+$categories = ['Stredné školy', 'Autoškoly', 'Vysoké školy', 'Programovanie', 'Web dizajn', 'Databázy'];
 ?>
 
 <body>
+    <?php include_once './components/nav.php'; ?>
     <h1>XML KNIŽNICA</h1>
     <main>
-    <?php include_once './inc/sidebar.php'; ?>
+    <?php include_once './components/sidebar.php'; ?>
     <div class="main-books">
     <?php
 
