@@ -5,8 +5,8 @@ $categories = ['Stredné školy', 'Autoškoly', 'Vysoké školy', 'Programovanie
 ?>
 
 <nav>
-    <h4>XML Knižnica</h4>
-    <form action="index.php" method="post">
+    <h4><a href="index.php">XML Knižnica</a></h4>
+    <form action="kategoria.php" method="post">
         <select name="submit">
             <?php
             $selectedValue;

@@ -21,7 +21,7 @@
             $activeForm = "";
         }
         echo '
-        <form class="'.$activeForm.'" action="index.php" method="post">
+        <form class="'.$activeForm.'" action="kategoria.php" method="post">
         <i class="fa-solid '.$icons[$i].'"></i>
         <li class=book-category>
         <input class="'.$activeForm.'" type="submit" name="submit" value="'.$categories[$i].'">

@@ -10,10 +10,9 @@ h1 {
   font-size: 2rem;
   padding: 3rem 2rem;
   color: white;
-  background-image: linear-gradient(rgba(41, 50, 44, 0.8), rgba(0, 0, 0, 0.75)), url(../img/books.jpg);
+  background-image: linear-gradient(rgba(41, 50, 44, 0.8), rgba(0, 0, 0, 0.25)), url(../img/books.jpg);
   background-position: center top;
   background-size: cover;
-  border-top: 4px solid white;
 }
 
 main {
@@ -85,10 +84,12 @@ ul li {
 }
 
 hr {
-  color: gray;
-  opacity: 25%;
+  color: rgb(123, 123, 123);
+  opacity: 75%;
+  width: 27rem;
   position: relative;
-  right: 1.25rem;
+  left: 5rem;
+  top: 0.5rem;
 }
 
 form input[type=submit] {
@@ -132,6 +133,10 @@ nav h4 {
   position: relative;
   top: 0.4rem;
   left: 1rem;
+}
+nav h4 a {
+  text-decoration: none;
+  color: white;
 }
 nav select {
   width: 14rem;
@@ -197,4 +202,41 @@ nav button {
   background-position: center top;
   background-size: cover;
   width: 15rem;
+}
+
+.main-h1 {
+  padding: 4rem 5rem;
+}
+
+.main-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70rem;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 15px;
+  margin: 2rem auto 4rem;
+}
+.main-text img {
+  width: 30rem;
+  background-color: rgb(226, 208, 176);
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  border: 2px solid rgb(201, 191, 171);
+}
+.main-text p {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 8.5rem;
+  width: 30rem;
+  line-height: 35px;
+  position: relative;
+  left: 3rem;
+}
+
+.main-body {
+  background-image: linear-gradient(rgba(41, 50, 44, 0.8), rgba(0, 0, 0, 0.75)), url(../img/books.jpg);
+  background-position: center top;
+  background-size: cover;
 }
