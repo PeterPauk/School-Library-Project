@@ -3,9 +3,9 @@ include_once './inc/config.php';
 include_once './components/head.php';
 include_once './components/nav.php';
 
-if(isset($_POST['product'])){
-    $book = $_POST['product'];
-    $sqlBook = "SELECT * FROM test_xml WHERE nazov = '".$book."';";
+if(isset($_GET['product'])){
+    $book = $_GET['product'];
+    $sqlBook = "SELECT * FROM test_xml WHERE adresa = '".$book."';";
     $bookResults = mysqli_query($conn, $sqlBook);
     $bookCheck = mysqli_num_rows($bookResults);
     

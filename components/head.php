@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
-    if (isset($_POST['submit'])) {
-        echo '<title>XML Test - ' . $_POST['submit'] . '</title>';
-    } elseif (isset($_POST['product'])) {
-        echo '<title>XML Test - ' . $_POST['product'] . '</title>';
+    if (isset($_GET['submit'])) {
+        echo '<title>XML Test - ' . $_GET['submit'] . '</title>';
+    } elseif (isset($_GET['product'])) {
+        echo '<title>XML Test - ' . $_GET['product'] . '</title>';
     } else {
         echo '<title>XML Test</title>';
     }
     ?>
     <script src="https://kit.fontawesome.com/0a4f5afbb3.js" crossorigin="anonymous"></script>
+    <base href="/xmlka/">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

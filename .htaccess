@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    RewriteBase /xmlka/
+
+    RewriteCond %{QUERY_STRING} ^submit=(.*)$
+    RewriteRule ^$ %1.html? [R=301,L]
+
+    RewriteRule ^kategoria/([^/]+)/?$ kategoria.php?submit=$1 [QSA,L]
+
+    RewriteRule ^product/([^/]+)/?$ product.php?product=$1 [QSA,L]
+</IfModule>

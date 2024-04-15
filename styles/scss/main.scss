@@ -67,12 +67,12 @@ ul{
         color: white;
         i{
             position: relative;
-            top: 1rem;
+            top: 1.5rem;
             margin: 0 0.5rem 0 1.5rem;
         }
         &:hover{
             background-color: white;        
-            input, i{
+            label, i{
                 color: $black !important;
             }
         }
@@ -94,6 +94,7 @@ hr{
 }
 form input[type="submit"] {
     color: white;
+    opacity: 0%;
     background-color: transparent;
     font-size: 1.2rem;
     border: 0px solid transparent;
@@ -101,6 +102,9 @@ form input[type="submit"] {
     width: 15rem;
     display: flex;
     justify-content: flex-start;
+    position: relative;
+    bottom: 0.55rem;
+
 }
 .active{
     background-color: white;
@@ -125,10 +129,10 @@ nav{
     padding: 2rem 1rem;
     h4{
         font-size: 1.5rem;
-        margin-right: 57rem;
         position: relative;
         top: 0.4rem;
         left: 1rem;
+        margin-right: 65%;
         a{
             text-decoration: none;
             color: white;
@@ -147,6 +151,10 @@ nav{
         border-radius: 6px;
         font-size: 1.1rem;
         margin-left: 1rem;
+    }
+    form{
+        display: flex;
+        justify-content: flex-end;
     }
 }
 .book-page{
@@ -232,4 +240,11 @@ nav{
     background-image: linear-gradient(rgba(41, 50, 44, 0.8), rgba(0, 0, 0, 0.75)), url(../img/books.jpg);
     background-position: center top;
     background-size: cover;
+}
+.book-category{
+    height: 4rem;
+    label{
+        position: relative;
+        top: 0.5rem;
+    }
 }

@@ -9,21 +9,23 @@
     $xmlDatabases = "https://export.martinus.sk/?a=XmlPartner&cat=6414&q=&z=B7GET5&key=NYtvbkOHAzPzGJNz7qR9Kk";
     $xmlfiles = [$xmlSchools, $xmlCars, $xmlUniversity, $xmlProgramming, $xmlWeb, $xmlDatabases];
 
-    $categories = ['Stredné školy', 'Autoškoly', 'Vysoké školy', 'Programovanie', 'Web dizajn', 'Databázy'];
+    $categories = ['stredné-školy', 'autoškoly', 'vysoké-školy', 'programovanie', 'web-dizajn', 'databázy'];
+    $labels = ['Stredné školy', 'Autoškoly', 'Vysoké školy', 'Programovanie', 'Web Dizajn', 'Databázy'];
     $icons = ['fa-school', 'fa-car', 'fa-building-columns', 'fa-computer', 'fa-desktop', 'fa-database'];
     $activeForm = "";
 
     for($i = 0; $i < count($categories); $i++){
-        if(isset($_POST['submit']) && $_POST['submit'] == $categories[$i]){
+        if(isset($_GET['submit']) && $_GET['submit'] == $categories[$i]){
             $activeForm = "active";
         }
         else{
             $activeForm = "";
         }
         echo '
-        <form class="'.$activeForm.'" action="kategoria.php" method="post">
+        <form class="'.$activeForm.'" action="kategoria.php" method="GET">
         <i class="fa-solid '.$icons[$i].'"></i>
         <li class=book-category>
+        <label>'.$labels[$i].'</label>
         <input class="'.$activeForm.'" type="submit" name="submit" value="'.$categories[$i].'">
         </li>
         </form>
@@ -31,7 +33,7 @@
     }
 
     for($i = 0; $i < 6; $i++){
-        if(isset($_POST['submit']) && $_POST['submit'] == $categories[$i]){
+        if(isset($_GET['submit']) && $_GET['submit'] == $categories[$i]){
 
             $xmlfile = $xmlfiles[$i];
             $ch = curl_init();
@@ -56,23 +58,28 @@
                     $checkSql = "SELECT * FROM test_xml WHERE nazov = '$nazov'";
                     $checkResult = mysqli_query($conn, $checkSql);
 
+                    $adresa = $conn->real_escape_string($book->title);
+                    $adresa = str_replace(" ", "-", $adresa);
+
+
                     if (mysqli_num_rows($checkResult) == 0) {
-                        $insertSql = "INSERT INTO test_xml (nazov, autor, kategoria, informacieoknihe, cena, obrazok) VALUES ('$nazov', '$autor', '$categories[$i]','$informacieoknihe', '$cena', '$obrazok')";
+                        $insertSql = "INSERT INTO test_xml (nazov, autor, kategoria, informacieoknihe, cena, obrazok, adresa) VALUES ('$nazov', '$autor', '$categories[$i]','$informacieoknihe', '$cena', '$obrazok', '$adresa')";
                         $conn->query($insertSql);
                     }
             }
             curl_close($ch);
         }
     }
-    if(isset($_POST['submit'])){
-        $category = $_POST['submit'];
-        $sqlItems = "SELECT nazov, autor, informacieoknihe, cena, obrazok FROM test_xml WHERE kategoria = '".$category."' LIMIT 50;";
+    if(isset($_GET['submit'])){
+        $category = $_GET['submit'];
+        $sqlItems = "SELECT nazov, autor, informacieoknihe, cena, obrazok, adresa FROM test_xml WHERE kategoria = '".$category."' LIMIT 50;";
     }
     else{
-        $sqlItems = "SELECT nazov, autor, informacieoknihe, cena, obrazok FROM test_xml LIMIT 50;";
+        $sqlItems = "SELECT nazov, autor, informacieoknihe, cena, obrazok, adresa FROM test_xml LIMIT 50;";
     }
     $itemResults = mysqli_query($conn, $sqlItems);
     $itemsCheck = mysqli_num_rows($itemResults);
 
     ?>
     </ul>
+    
