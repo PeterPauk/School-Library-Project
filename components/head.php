@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
     if (isset($_GET['submit'])) {
-        echo '<title>XML Test - ' . $_GET['submit'] . '</title>';
+        $title = ucwords($_GET['submit']);
+        echo '<title>XML Test - ' . str_replace("-", " ", $title) . '</title>';
     } elseif (isset($_GET['product'])) {
-        echo '<title>XML Test - ' . $_GET['product'] . '</title>';
+        $title = ucwords($_GET['product']);
+        echo '<title>XML Test - ' . str_replace("-", " ", $title) . '</title>';
     } else {
         echo '<title>XML Test</title>';
     }

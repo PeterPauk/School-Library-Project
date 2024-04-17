@@ -9,7 +9,7 @@
     $xmlDatabases = "https://export.martinus.sk/?a=XmlPartner&cat=6414&q=&z=B7GET5&key=NYtvbkOHAzPzGJNz7qR9Kk";
     $xmlfiles = [$xmlSchools, $xmlCars, $xmlUniversity, $xmlProgramming, $xmlWeb, $xmlDatabases];
 
-    $categories = ['stredné-školy', 'autoškoly', 'vysoké-školy', 'programovanie', 'web-dizajn', 'databázy'];
+    $categories = ['stredne-skoly', 'autoskoly', 'vysoke-skoly', 'programovanie', 'web-dizajn', 'databazy'];
     $labels = ['Stredné školy', 'Autoškoly', 'Vysoké školy', 'Programovanie', 'Web Dizajn', 'Databázy'];
     $icons = ['fa-school', 'fa-car', 'fa-building-columns', 'fa-computer', 'fa-desktop', 'fa-database'];
     $activeForm = "";
@@ -60,6 +60,7 @@
 
                     $adresa = $conn->real_escape_string($book->title);
                     $adresa = str_replace(" ", "-", $adresa);
+                    $adresa = strtolower($adresa);
 
 
                     if (mysqli_num_rows($checkResult) == 0) {

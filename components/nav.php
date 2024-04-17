@@ -2,12 +2,15 @@
 include_once './inc/config.php';
 include_once './components/head.php';
 $categories = ['Stredné školy', 'Autoškoly', 'Vysoké školy', 'Programovanie', 'Web Dizajn', 'Databázy'];
-$values = ['stredné-školy', 'autoškoly', 'vysoké-školy', 'programovanie', 'web-dizajn', 'databázy'];
+$values = ['stredne-skoly', 'autoskoly', 'vysoke-skoly', 'programovanie', 'web-dizajn', 'databazy'];
 
 ?>
 
 <nav>
-    <h4><a href="index.php">XML Knižnica</a></h4>
+    <div>
+    <h4><a href="kategoria.php">XML Knižnica</a></h4>
+    <h5><a href="index.php">Úvod</a></h5>
+    </div>
     <form action="kategoria.php" method="GET">
         <select name="submit">
             <?php

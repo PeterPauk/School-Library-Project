@@ -1,16 +1,18 @@
 <?php
+include_once './components/url.php';
 include_once './inc/config.php';
 ?>
 
-
 <body>
-    <?php include_once './components/nav.php'; ?>
+    <?php 
+    include_once './components/nav.php'; 
+    ?>
     <h1>XML KNIŽNICA</h1>
     <main>
     <?php include_once './components/sidebar.php'; ?>
     <div class="main-books">
     <?php
-
+   
 
     if ($itemsCheck > 0) {
         while ($row = mysqli_fetch_assoc($itemResults)) {
@@ -28,6 +30,7 @@ include_once './inc/config.php';
         }
     }
     $conn->close();
+    
     ?>
     </div>
     </main>
