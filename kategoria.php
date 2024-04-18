@@ -30,10 +30,29 @@ include_once './inc/config.php';
         }
     }
     $conn->close();
-    
+    if(isset($_GET['submit'])){
+    echo '<form class="page-form" action="kategoria" method="GET">';
+    $currentURL = $_SERVER['REQUEST_URI'];
+    $matches = [];
+    $pageNums = [1,2,3];
+    for($i = 0; $i <= 2; $i++){
+        if (preg_match('/\/(\d+)$/', $currentURL, $matches)) {
+            $pageNum = $matches[1];
+            if($pageNum == ($i+1)){
+                echo '<a class= "active-a" href=kategoria/'.$_GET['submit'].'/'.$pageNums[$i].'>'.$pageNums[$i].'</a>';
+            }
+            else{
+                echo '<a href=kategoria/'.$_GET['submit'].'/'.$pageNums[$i].'>'.$pageNums[$i].'</a>';
+            }
+        }
+    }
+    }
+    echo '<form>';
     ?>
+    
     </div>
     </main>
+    
     <script src="./js/functions.js"></script>
     
 </body>

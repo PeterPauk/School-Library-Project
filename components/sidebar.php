@@ -61,6 +61,11 @@
 
                     $adresa = $conn->real_escape_string($book->title);
                     $adresa = str_replace(" ", "-", $adresa);
+                    $adresa = str_replace(
+                        ['á', 'ä', 'č', 'ď', 'é', 'í', 'ľ', 'ĺ', 'ň', 'ó', 'ô', 'ŕ', 'š', 'ť', 'ú', 'ý', 'ž', 'Á', 'Ä', 'Č', 'Ď', 'É', 'Í', 'Ľ', 'Ĺ', 'Ň', 'Ó', 'Ô', 'Ŕ', 'Š', 'Ť', 'Ú', 'Ý', 'Ž'],
+                        ['a', 'a', 'c', 'd', 'e', 'i', 'l', 'l', 'n', 'o', 'o', 'r', 's', 't', 'u', 'y', 'z', 'A', 'A', 'C', 'D', 'E', 'I', 'L', 'L', 'N', 'O', 'O', 'R', 'S', 'T', 'U', 'Y', 'Z'],
+                        $adresa
+                    );
                     $adresa = strtolower($adresa);
 
 
@@ -74,7 +79,21 @@
     }
     if(isset($_GET['submit'])){
         $category = $_GET['submit'];
-        $sqlItems = "SELECT nazov, autor, informacieoknihe, cena, obrazok, adresa FROM test_xml WHERE kategoria = '".$category."' LIMIT 50;";
+        $currentURL = $_SERVER['REQUEST_URI'];
+        $pageNumber = 0;
+
+        $matches = [];
+        if (preg_match('/\/(\d+)$/', $currentURL, $matches)) {
+            $pageNumber = $matches[1];
+            $bookCount = 20;
+            if($pageNumber == 1){
+                $sqlItems = "SELECT nazov, autor, informacieoknihe, cena, obrazok, adresa FROM test_xml WHERE kategoria = '".$category."' LIMIT 20 OFFSET 0;";
+            }
+            else{
+                $sqlItems = "SELECT nazov, autor, informacieoknihe, cena, obrazok, adresa FROM test_xml WHERE kategoria = '".$category."' LIMIT 20 OFFSET ".$pageNumber * $bookCount.";";
+            }
+            
+        }
     }
     else{
         $sqlItems = "SELECT nazov, autor, informacieoknihe, cena, obrazok, adresa FROM test_xml LIMIT 50;";
