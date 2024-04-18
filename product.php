@@ -1,4 +1,5 @@
 <?php
+include_once './components/url.php';
 include_once './inc/config.php';
 include_once './components/head.php';
 include_once './components/nav.php';

@@ -8,10 +8,10 @@ $values = ['stredne-skoly', 'autoskoly', 'vysoke-skoly', 'programovanie', 'web-d
 
 <nav>
     <div>
-    <h4><a href="kategoria.php">XML Knižnica</a></h4>
-    <h5><a href="index.php">Úvod</a></h5>
+    <h4><a href="kategoria">XML Knižnica</a></h4>
+    <h5><a href="">Úvod</a></h5>
     </div>
-    <form action="kategoria.php" method="GET">
+    <form action="kategoria" method="GET">
         <select name="submit">
             <?php
             $selectedValue;
