@@ -14,11 +14,11 @@ if(isset($_GET['product'])){
 if(isset($_SERVER['HTTP_REFERER'])) {
     $previous = $_SERVER['HTTP_REFERER'];
 }
-
-    
     if ($bookCheck > 0) {
         while ($row = mysqli_fetch_assoc($bookResults)){
+            echo '<div class="back-btn">';
             echo "<a href=\"javascript:history.go(-1)\">Späť</a>";
+            echo '</div>';
             echo <<<HTML
             <main>
                 <div class="book-side">

@@ -218,6 +218,7 @@ nav form {
 }
 
 .book-side {
+  margin-top: 4rem;
   background-image: linear-gradient(rgba(41, 50, 44, 0.8), rgba(0, 0, 0, 0.15)), url(../img/books1.jpg);
   background-position: center top;
   background-size: cover;
@@ -293,4 +294,39 @@ nav form {
 .active-a {
   background-color: rgb(50, 50, 176) !important;
   color: white !important;
+}
+
+.back-btn a {
+  background-color: rgb(50, 50, 176);
+  color: white;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-left: 3rem;
+  position: relative;
+  top: 2rem;
+  border-radius: 8px;
+}
+
+.odkazy {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  background-color: white;
+}
+.odkazy div {
+  text-align: center;
+  margin: 3.5rem 0;
+  padding: 2rem 0;
+  background-color: rgb(226, 208, 176);
+  border: 2px solid rgb(201, 191, 171);
+  border-radius: 10px;
+}
+.odkazy div h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.odkazy div p {
+  font-size: 1.1rem;
+  line-height: 20px;
 }

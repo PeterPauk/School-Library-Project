@@ -18,7 +18,9 @@ include_once './inc/config.php';
         while ($row = mysqli_fetch_assoc($itemResults)) {
             echo <<<HTML
             <form class="book" action="product.php" method="GET">
+                <a href="product.php"><button class="title-button" type="submit" name="product" value="{$row['adresa']}">
                 <img src="{$row['obrazok']}" alt="Image" />
+                </button></a>
                 <div class="book-content">
                     <h3 class="book-title"><a href="product.php"><button class="title-button" type="submit" name="product" value="{$row['adresa']}">{$row['nazov']}</button></a></h3>
                     <h4 class="book-author">{$row['autor']}</h4>
