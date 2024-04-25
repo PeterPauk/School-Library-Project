@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
     if (isset($_GET['submit'])) {
-        $title = ucwords($_GET['submit']);
-        echo '<title>XML Test - ' . str_replace("-", " ", $title) . '</title>';
+        $labels = ['Stredné školy', 'Autoškoly', 'Vysoké školy', 'Programovanie', 'Web Dizajn', 'Databázy'];
+        $title = ($_GET['submit']);
+        for($i = 0; $i <= 5; $i++){
+            if (strtolower(substr($title, 0, 1)) === strtolower(substr($labels[$i], 0, 1))) {
+                echo '<title>XML Test - ' . str_replace("-", " ", $labels[$i]) . '</title>';
+            }
+        }
     } elseif (isset($_GET['product'])) {
         $title = ucwords($_GET['product']);
         echo '<title>XML Test - ' . str_replace("-", " ", $title) . '</title>';
