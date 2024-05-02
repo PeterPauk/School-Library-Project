@@ -330,3 +330,48 @@ nav form {
   font-size: 1.1rem;
   line-height: 20px;
 }
+
+.contact {
+  width: 25rem;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  box-shadow: -2px -4px 72px -47px rgb(0, 0, 0);
+}
+.contact h3 {
+  text-align: center;
+  font-size: 1.7rem;
+}
+.contact div {
+  display: flex;
+  flex-direction: column;
+}
+.contact div label {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  margin-top: 1.2rem;
+}
+.contact div input {
+  height: 2rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+.contact div textarea {
+  border-radius: 5px;
+  font-size: 1.2rem;
+  height: 6rem;
+  padding: 0.3rem;
+}
+.contact button {
+  background-color: rgb(50, 50, 176);
+  color: white;
+  height: 2rem;
+  padding: 0rem 1.4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.g-recaptcha {
+  margin: 2rem auto 2rem;
+}

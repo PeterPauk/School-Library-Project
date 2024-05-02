@@ -21,6 +21,7 @@
     }
     ?>
     <script src="https://kit.fontawesome.com/0a4f5afbb3.js" crossorigin="anonymous"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <base href="/xmlka/">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
